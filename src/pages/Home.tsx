@@ -1,13 +1,13 @@
 
-import { Link } from "react-router-dom";
-import Loading from "../components/modules/Loading";
-import ErrorAlert from "../components/modules/ErrorAlert";
-import useFoods from "../Hooks/useCategoryFoods";
+// import { Link } from "react-router-dom";
+// import Loading from "../components/modules/Loading";
+// import ErrorAlert from "../components/modules/ErrorAlert";
+// import useFoods from "../Hooks/useCategoryFoods";
 
 
 export default function Home() {
 
-    const categoris = ["Italian", "Asian", "American", ""]
+    // const categoris = ["Italian", "Asian", "American", ""]
 
     // const data = useFoods(...categoris)
 
