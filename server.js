@@ -10,7 +10,7 @@ server.use(middlewares);
 server.use(router);
 
 // Start the server
-const PORT = process.env.PORT || "https://react-query-online-shop.vercel.app/dashboard";
+const PORT = process.env.ENVIRONMENT_URL || "https://react-query-online-shop.vercel.app";
 server.listen(PORT, () => {
   console.log(`JSON Server is running on port ${PORT}`);
 });
