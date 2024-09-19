@@ -9,23 +9,23 @@ export default function Home() {
 
     const categoris = ["Italian", "Asian", "American", ""]
 
-    const data = useFoods(...categoris)
+    // const data = useFoods(...categoris)
 
-    const allData = data.map((category, index) => {
-        return { ...category, title: categoris[index] }
-    })
+    // const allData = data.map((category, index) => {
+    //     return { ...category, title: categoris[index] }
+    // })
 
-    data.map(category => {
-        if (category.isLoading) return <Loading />
-    })
-    data.map(category => {
-        if (category.isError) return <ErrorAlert errorMsg={"error message please try again"} />
-    })
+    // data.map(category => {
+    //     if (category.isLoading) return <Loading />
+    // })
+    // data.map(category => {
+    //     if (category.isError) return <ErrorAlert errorMsg={"error message please try again"} />
+    // })
 
 
     return (
         <div className="container py-8">
-            {allData.map((category, index) => {
+            {/* {allData.map((category, index) => {
                 const title = category.title || "Other";
                 return (
                     <div key={index}>
@@ -46,9 +46,9 @@ export default function Home() {
                         </div>
                     </div>
                 )
-            })}
+            })} */}
 
-
+                comming soon
         </div >
     )
 }
