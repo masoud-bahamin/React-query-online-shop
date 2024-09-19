@@ -26,6 +26,8 @@ export function useDeleteFood() {
         } )
     },{
         onSuccess : (res , id) => {
+            console.log(res);
+            
             const foods = queryClient.getQueryData(["foods"]) as FoodType[]
             const newFoods = foods?.filter(f => f.id !== id)
             queryClient.setQueryData(["foods"] , newFoods);
