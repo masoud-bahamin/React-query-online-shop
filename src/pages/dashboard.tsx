@@ -70,7 +70,7 @@ export default function () {
                                         </tr>
                                     </thead>
                                     <tbody className="bg-white">
-                                        {data?.slice().reverse().map(food => (
+                                        {data?.recipes?.slice()?.reverse()?.map(food => (
                                             <tr key={food.id}>
                                                 <td className="px-6 border-b border-gray-200">
                                                     <img className="size-10 rounded-full" src={food.image} alt="" />

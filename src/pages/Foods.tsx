@@ -8,16 +8,15 @@ import Pagination from "../components/modules/Pagination";
 
 export default function Foods() {
 
-    const {id = 1} = useParams()
+    const { id = 1 } = useParams()
 
-    const { data, isError, isLoading, isFetching } = useQuery(["foods-pagination" , id], () => {
-        return fetch(`http://localhost:4000/foods?_page=${id}&_per_page=5`).then(res => res.json()) as Promise<{data :FoodType[] , first : number , last : number}>
+    const { data, isError, isLoading, isFetching } = useQuery(["foods-pagination", id], () => {
+        return fetch(`https://dummyjson.com/recipes?limit=8&skip=${+id * 8 - 8}`).then(res => res.json()) as Promise<{ recipes: FoodType[], limit: number, skip: number, total: number }>
     }, {
         cacheTime: 600000,
         staleTime: 100000
     })
-    console.log(data);
-    
+
     if (isLoading) return <Loading />
     if (isError) return <ErrorAlert errorMsg={"error message please try again"} />
 
@@ -25,9 +24,9 @@ export default function Foods() {
         <div className="container overflow-x-hidden">
             {isFetching ? <Loading /> : null}
             <div className="flex flex-wrap justify-between gap-y-10">
-                {data?.data?.map(food => (
+                {data?.recipes?.map(food => (
                     <div key={food.id}
-                        className="w-1/5 p-5 space-y-2"
+                        className="w-1/4 p-5 space-y-2"
                     >
                         <img className="w-full" src={food.image} alt="" />
                         <Link to={`/food/${food.id}`}>{food.name}</Link>
@@ -36,7 +35,7 @@ export default function Foods() {
                     </div>
                 ))}
             </div>
-            <Pagination currentPage={+id} first={data?.first || 1} last={data?.last || 1}/>
+            <Pagination currentPage={+id} first={data?.skip || 1} last={(data?.total || 8) % 8 === 0 ? (data?.total || 8) / 8 : Math.floor((data?.total || 8) / 8 + 1)} />
         </div>
     )
 }

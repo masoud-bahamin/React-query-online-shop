@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function Pagination({ currentPage, first, last }: { currentPage: number, first: number, last: number }) {
+    
     return (
         <nav className="mb-4 flex justify-center space-x-4" aria-label="Pagination">
             <Link to={`/foods/${currentPage === first ? first : currentPage - 1}`} className={` ${currentPage === first ? "text-gray-300" : ""} rounded-lg border border-teal-500 px-2 py-2 text-gray-700`}>

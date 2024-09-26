@@ -13,11 +13,11 @@ export default function SingleFood() {
     const queryClient = useQueryClient()
 
     const { data, isLoading, isError  } = useQuery((["single-food", id]), () => {
-        return fetch(`http://localhost:4000/foods/${id}`).then(res => res.json())
+        return fetch(`https://dummyjson.com/recipes/${id}`).then(res => res.json())
     }, {
         initialData: () => {
-            const foodsCach : undefined | FoodType[] = queryClient.getQueryData(["foods"]) 
-            const food = foodsCach?.find(food => food.id === +id)
+            const foodsCach : undefined | {recipes : FoodType[]}  = queryClient.getQueryData(["foods"]) 
+            const food = foodsCach?.recipes?.find(food => food.id === +id)
             return food  
         }
     })

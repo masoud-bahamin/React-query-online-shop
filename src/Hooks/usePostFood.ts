@@ -4,7 +4,7 @@ import { FoodType } from "../types";
 export default function usePostFood() {
     const queryClient = useQueryClient()
     return useMutation((body: object) => {
-        return fetch("http://localhost:4000/foods", {
+        return fetch("https://dummyjson.com/recipes", {
             method: "POST",
             body: JSON.stringify(body)
         }).then(res => {
@@ -19,7 +19,7 @@ export default function usePostFood() {
 export function useDeleteFood() {
     const queryClient = useQueryClient()
     return useMutation((id:number) => {
-        return fetch(`http://localhost:4000/foods/${id}`, {
+        return fetch(`https://dummyjson.com/recipes/${id}`, {
             method: "Delete",
         }).then(res => {
           return  res.json()

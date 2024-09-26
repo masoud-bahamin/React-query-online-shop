@@ -14,8 +14,8 @@ function App() {
   const client = new QueryClient({
     defaultOptions : {
       queries : {
-        cacheTime : 90000,
-        staleTime : 20000,
+        // cacheTime : 90000,
+        // staleTime : 20000,
         keepPreviousData : true
       }
     }
