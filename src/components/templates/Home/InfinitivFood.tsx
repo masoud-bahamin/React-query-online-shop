@@ -24,10 +24,10 @@ export default function InfinitivFoods() {
                 return (
                     <div key={index}>
                         {page.isLoading ? <Loading /> : null}
-                        <div className="flex flex-wrap gap-x-10 gap-y-10 mb-20">
+                        <div className="flex flex-wrap gap-y-10 mb-20">
                             {page.recipes?.map((food: FoodType) => (
                                 <div key={food.id}
-                                    className="w-1/5 space-y-2"
+                                    className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
                                 >
                                     <img className="w-full" src={food.image} alt="" />
                                     <Link to={`/food/${food.id}`}>{food.name}</Link>

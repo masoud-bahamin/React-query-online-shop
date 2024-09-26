@@ -26,7 +26,7 @@ export default function Foods() {
             <div className="flex flex-wrap justify-between gap-y-10">
                 {data?.recipes?.map(food => (
                     <div key={food.id}
-                        className="w-1/4 p-5 space-y-2"
+                        className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
                     >
                         <img className="w-full" src={food.image} alt="" />
                         <Link to={`/food/${food.id}`}>{food.name}</Link>

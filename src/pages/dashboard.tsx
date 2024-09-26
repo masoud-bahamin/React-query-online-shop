@@ -18,8 +18,8 @@ export default function () {
             <div className=" bg-gray-50">
                 <Header />
                 {/* Main content */}
-                <div className="flex ">
-                    <aside className="px-4 text-center border-r border-gray-200">
+                <div className="flex flex-wrap md:flex-nowrap">
+                    <aside className="px-4 text-center border-r border-gray-200 flex md:block gap-4">
                         <button className="text-gray-500 block w-full text-center focus:outline-none focus:text-gray-700 my-4">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ export default function () {
                     </aside>
                     <main className="p-4">
                         <h1 className="text-2xl font-bold mb-4">Add Food </h1>
-                        <div className="flex">
+                        <div className="flex flex-wrap md:flex-nowrap gap-y-5">
                             {/* form */}
                             <div className="min-w-80">
                                 <FoodForm />

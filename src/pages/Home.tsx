@@ -31,10 +31,10 @@ export default function Home() {
                         {category.isLoading ? <Loading /> : null}
                         {category.isError ? <ErrorAlert errorMsg={"error message please try again"} /> : null}
                         <h2 className="text-2xl font-semibold mb-4">{title} Foods</h2>
-                        <div className="flex flex-wrap gap-x-10 gap-y-10 mb-20">
+                        <div className="flex flex-wrap gap-y-10 mb-20">
                             {category.data?.recipes.map(food => (
                                 <div key={food.id}
-                                    className="w-1/5 space-y-2"
+                                    className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
                                 >
                                     <img className="w-full" src={food.image} alt="" />
                                     <Link to={`/food/${food.id}`}>{food.name}</Link>

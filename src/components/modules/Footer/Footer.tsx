@@ -140,9 +140,9 @@ export default function Footer() {
                             Button
                         </button>
                         <p className="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">
-                            Bitters chicharrones fanny pack
+                            Lorem, ipsum dolor sit
                             <br className="lg:block hidden" />
-                            waistcoat green juice
+                            Minus ex neque, reiciendis
                         </p>
                     </div>
                     <span className="inline-flex lg:ml-auto lg:mt-0 mt-6 w-full justify-center md:justify-start md:w-auto">

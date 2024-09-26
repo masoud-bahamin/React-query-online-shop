@@ -53,7 +53,7 @@ export default function SingleFood() {
                             </a>
                         </div>
                     </div>
-                    <div className="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
+                    <div className="w-1/3 lg:w-3/5 relative top-0 -left-80 sm:left-0">
                         <img
                             src={data.image}
                             className="max-w-xs md:max-w-sm m-auto"
