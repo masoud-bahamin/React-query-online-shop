@@ -1,6 +1,6 @@
 # React + TypeScript + React-query
 
-See online <a target="blank" href="https://react-query-online-shop.vercel.app">Demo</a>
+See online <a target="blank" href="https://react-query-online-shop.vercel.app">demo</a>
 
 Use custom hooks with react-query
 
