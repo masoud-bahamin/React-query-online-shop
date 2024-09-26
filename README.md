@@ -1,4 +1,10 @@
-# React + TypeScript + Vite
+# React + TypeScript + React-query
+
+See online <a target="blank" href="https://react-query-online-shop.vercel.app/foods">Demo</a>
+
+Use custom hooks with react-query
+
+# react-query
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
