@@ -1,5 +1,4 @@
 import { useInfiniteQuery } from "react-query";
-import { Link } from "react-router-dom";
 import { FoodType } from "../../../types";
 import Loading from "../../modules/Loading";
 import MainCard from "../../modules/Cards/MainCard";
