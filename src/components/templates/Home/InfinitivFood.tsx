@@ -2,6 +2,7 @@ import { useInfiniteQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { FoodType } from "../../../types";
 import Loading from "../../modules/Loading";
+import MainCard from "../../modules/Cards/MainCard";
 
 export default function InfinitivFoods() {
 
@@ -24,16 +25,9 @@ export default function InfinitivFoods() {
                 return (
                     <div key={index}>
                         {page.isLoading ? <Loading /> : null}
-                        <div className="flex flex-wrap gap-y-10 mb-20">
+                        <div className="flex flex-wrap gap-y-5 mb-20">
                             {page.recipes?.map((food: FoodType) => (
-                                <div key={food.id}
-                                    className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
-                                >
-                                    <Link to={`/food/${food.id}`}><img className="w-full max-h-64" src={food.image} alt="" /></Link>
-                                    <Link to={`/food/${food.id}`}>{food.name}</Link>
-                                    <p className="text-sm text-gray-400 line-clamp-3">{food.instructions}</p>
-                                    <button className="text-sm w-full py-2 rounded-lg bg-green-800 text-gray-100 hover:bg-green-700">Add To Cart</button>
-                                </div>
+                                <MainCard key={food.id} food={food} />
                             ))}
                         </div>
                     </div>
@@ -42,7 +36,7 @@ export default function InfinitivFoods() {
 
             <button
                 disabled={!hasNextPage}
-                className={`bg-blue-400 text-white rounded-lg py-3 px-12 mx-auto ${!hasNextPage ? "hidden" : "block"} `} onClick={() => fetchNextPage()}>
+                className={`bg-light font-medium rounded-lg py-3 px-12 mx-auto ${!hasNextPage ? "hidden" : "block"} `} onClick={() => fetchNextPage()}>
                 {isFetching ? "Loading..." : "Load More"}
             </button>
         </div >

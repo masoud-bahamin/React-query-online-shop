@@ -69,7 +69,7 @@ export default function FoodForm() {
                 />
             </div>
             <button disabled={isLoading}
-                className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="bg-primary hover:bg-light text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit"
             >
                 {isLoading ? "Submiting" : "Submit"}

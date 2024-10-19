@@ -4,7 +4,7 @@ export default function Pagination({ currentPage, first, last }: { currentPage: 
     
     return (
         <nav className="mb-4 flex justify-center space-x-4" aria-label="Pagination">
-            <Link to={`/foods/${currentPage === first ? first : currentPage - 1}`} className={` ${currentPage === first ? "text-gray-300" : ""} rounded-lg border border-teal-500 px-2 py-2 text-gray-700`}>
+            <Link to={`/foods/${currentPage === first ? first : currentPage - 1}`} className={` ${currentPage === first ? "text-gray-400 cursor-auto" : "text-gray-700"} rounded-lg border border-primary px-2 py-2 `}>
                 <span className="sr-only">Previous</span>
                 <svg
                     className="mt-1 h-5 w-5"
@@ -21,22 +21,22 @@ export default function Pagination({ currentPage, first, last }: { currentPage: 
                 </svg>
             </Link>
             <Link
-                className={`${currentPage === first ? "hidden" : ""} rounded-lg border border-teal-500 px-4 py-2 text-gray-700`}
+                className={`${currentPage === first ? "hidden" : ""} rounded-lg border border-primary px-4 py-2 text-gray-700`}
                 to={`/foods/${currentPage - 1}`}
             >
                 {currentPage - 1}
             </Link>
-            <span className="rounded-lg border border-teal-500 bg-teal-500 px-4 py-2 text-white">
+            <span className="rounded-lg border border-primary bg-primary px-4 py-2 text-white">
                 {currentPage}
             </span>
             <Link
-                className={` ${currentPage === last ? "hidden" : ""} rounded-lg border border-teal-500 px-4 py-2 text-gray-700`}
+                className={` ${currentPage === last ? "hidden" : ""} rounded-lg border border-primary px-4 py-2 text-gray-700`}
                 to={`/foods/${currentPage + 1}`}
             >
                 {currentPage + 1}
             </Link>
             <Link to={`/foods/${currentPage === last ? last : currentPage + 1}`}
-                className={` ${currentPage === last ? "text-gray-300" : ""} rounded-lg border border-teal-500 px-2 py-2 text-gray-700`}
+                className={` ${currentPage === last ? "text-gray-400 cursor-auto" : "text-gray-700"} rounded-lg border border-primary px-2 py-2 `}
             >
                 <span className="sr-only">Next</span>
                 <svg

@@ -1,9 +1,10 @@
 import { useQuery } from "react-query"
 import { FoodType } from "../types";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Loading from "../components/modules/Loading";
 import ErrorAlert from "../components/modules/ErrorAlert";
 import Pagination from "../components/modules/Pagination";
+import PaginationCard from "../components/modules/Cards/PaginationCard";
 
 
 export default function Foods() {
@@ -21,17 +22,11 @@ export default function Foods() {
     if (isError) return <ErrorAlert errorMsg={"error message please try again"} />
 
     return (
-        <div className="container overflow-x-hidden">
+        <div className="container overflow-x-hidden py-10">
             {isFetching ? <Loading /> : null}
-            <div className="flex flex-wrap justify-between gap-y-5">
+            <div className="flex flex-wrap justify-between gap-y-5 mb-5">
                 {data?.recipes?.map(food => (
-                    <div key={food.id}
-                        className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
-                    >
-                        <Link to={`/food/${food.id}`}><img className="w-full max-h-64" src={food.image} alt="" /></Link>
-                        <Link to={`/food/${food.id}`}>{food.name}</Link>
-                        <p className="text-sm text-gray-400 line-clamp-1">{food.instructions}</p>
-                    </div>
+                    <PaginationCard food={food} key={food.id} />
                 ))}
             </div>
             <Pagination currentPage={+id} first={data?.skip || 1} last={(data?.total || 8) % 8 === 0 ? (data?.total || 8) / 8 : Math.floor((data?.total || 8) / 8 + 1)} />

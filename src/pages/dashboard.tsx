@@ -16,7 +16,7 @@ export default function () {
     if (isError) return <ErrorAlert errorMsg={"error message please try again"} />
     return (
         <div className="border-t">
-            <div className=" bg-gray-50">
+            <div className=" bg-gray-50 text-dark">
                 <Header />
                 {/* Main content */}
                 <div className="flex flex-wrap md:flex-nowrap">
@@ -79,13 +79,12 @@ export default function () {
                                                 <td className="py-4 px-6 border-b border-gray-200">{food.name}</td>
                                                 <td className="py-4 px-6 border-b border-gray-200 truncate">{food.cuisine}</td>
                                                 <td className="py-4 px-6 border-b border-gray-200">   
-                                                        <button disabled className="bg-green-500 text-white py-1 px-3 mr-4 rounded-full text-xs">
+                                                        <button className="bg-light hover:bg-gray-300 py-1 px-3 mr-4 rounded-full text-xs">
                                                             Edit
                                                         </button>
                                                         <DeleteButton id={food.id} />
                                                 </td>
                                             </tr>))}
-
                                     </tbody>
                                 </table>
                             </div>

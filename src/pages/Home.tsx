@@ -3,18 +3,19 @@ import Loading from "../components/modules/Loading";
 import ErrorAlert from "../components/modules/ErrorAlert";
 import useFoods from "../Hooks/useCategoryFoods";
 import InfinitivFoods from "../components/templates/Home/InfinitivFood";
+import MainCard from "../components/modules/Cards/MainCard";
 
 
 export default function Home() {
-    
+
     const categoris = ["Italian", "Asian", "Pakistani"]
 
     const data = useFoods(...categoris)
 
     const allData = data.map((category, index) => {
-            return { ...category, title: categoris[index] }
-        })
-        
+        return { ...category, title: categoris[index] }
+    })
+
     data.map(category => {
         if (category.isLoading) return <Loading />
     })
@@ -35,20 +36,12 @@ export default function Home() {
                         <h2 className="text-2xl font-semibold mb-4">{title} Foods</h2>
                         <div className="flex flex-wrap gap-y-10 mb-20">
                             {category.data?.recipes.map(food => (
-                                <div key={food.id}
-                                    className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
-                                >
-                                   <Link to={`/food/${food.id}`}> <img className="w-full max-h-64" src={food.image} alt="" /></Link>
-                                    <Link to={`/food/${food.id}`}>{food.name}</Link>
-                                    <p className="text-sm text-gray-400 line-clamp-3">{food.instructions}</p>
-                                    <button className="text-sm w-full py-2 rounded-lg bg-green-800 text-gray-100 hover:bg-green-700">Add To Cart</button>
-                                </div>
+                                <MainCard key={food.id} food={food} />
                             ))}
                         </div>
                     </div>
                 )
             })}
-   
         </div >
     )
 }

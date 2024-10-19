@@ -1,10 +1,10 @@
 export default function Footer() {
     return (
-        <footer className="text-gray-600 body-font">
+        <footer className="text-dark body-font">
             <div className="container py-24 mx-auto">
                 <div className="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
                     <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                        <h2 className="title-font font-medium tracking-widest text-sm mb-3">
                             CATEGORIES
                         </h2>
                         <nav className="list-none mb-10">
@@ -23,7 +23,7 @@ export default function Footer() {
                         </nav>
                     </div>
                     <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                        <h2 className="title-font font-medium tracking-widest text-sm mb-3">
                             CATEGORIES
                         </h2>
                         <nav className="list-none mb-10">
@@ -42,7 +42,7 @@ export default function Footer() {
                         </nav>
                     </div>
                     <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                        <h2 className="title-font font-medium tracking-widest text-sm mb-3">
                             CATEGORIES
                         </h2>
                         <nav className="list-none mb-10">
@@ -61,7 +61,7 @@ export default function Footer() {
                         </nav>
                     </div>
                     <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                        <h2 className="title-font font-medium tracking-widest text-sm mb-3">
                             CATEGORIES
                         </h2>
                         <nav className="list-none mb-10">
@@ -80,7 +80,7 @@ export default function Footer() {
                         </nav>
                     </div>
                     <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                        <h2 className="title-font font-medium tracking-widest text-sm mb-3">
                             CATEGORIES
                         </h2>
                         <nav className="list-none mb-10">
@@ -99,7 +99,7 @@ export default function Footer() {
                         </nav>
                     </div>
                     <div className="lg:w-1/6 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                        <h2 className="title-font font-medium tracking-widest text-sm mb-3">
                             CATEGORIES
                         </h2>
                         <nav className="list-none mb-10">
@@ -127,7 +127,7 @@ export default function Footer() {
                                 htmlFor="footer-field"
                                 className="leading-7 text-sm text-gray-600"
                             >
-                                Placeholder
+                                Email:
                             </label>
                             <input
                                 type="text"
@@ -136,7 +136,7 @@ export default function Footer() {
                                 className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:bg-transparent focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                             />
                         </div>
-                        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                        <button className="inline-flex font-medium bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded">
                             Button
                         </button>
                         <p className="text-gray-500 text-sm md:ml-6 md:mt-0 mt-2 sm:text-left text-center">

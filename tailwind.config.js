@@ -9,6 +9,12 @@ export default {
       container:{
         center:true,
         padding:"20px"
+      },
+      colors : {
+        primary : "#A3C93C",
+        dark:"#252021",
+        light:"#E8E8E8",
+        secondary : "#575650"
       }
     },
   },
