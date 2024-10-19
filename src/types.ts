@@ -1,6 +1,6 @@
  export type FoodType = {
-    "id": 1,
-    "name": "Classic Margherita Pizza",
+    "id": number,
+    "name": string,
     "ingredients": [
         "Pizza dough",
         "Tomato sauce",
@@ -21,14 +21,14 @@
     "cookTimeMinutes": 15,
     "servings": 4,
     "difficulty": "Easy",
-    "cuisine": "Italian",
+    "cuisine": string,
     "caloriesPerServing": 300,
     "tags": [
         "Pizza",
         "Italian"
     ],
     "userId": 166,
-    "image": "https://cdn.dummyjson.com/recipe-images/1.webp",
+    "image": string,
     "rating": 4.6,
     "reviewCount": 98,
     "mealType": [

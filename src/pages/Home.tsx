@@ -24,6 +24,8 @@ export default function Home() {
 
     return (
         <div className="container py-8">
+            <InfinitivFoods />
+            <hr />
             {allData.map((category, index) => {
                 const title = category.title || "Other";
                 return (
@@ -36,7 +38,7 @@ export default function Home() {
                                 <div key={food.id}
                                     className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
                                 >
-                                    <img className="w-full" src={food.image} alt="" />
+                                   <Link to={`/food/${food.id}`}> <img className="w-full max-h-64" src={food.image} alt="" /></Link>
                                     <Link to={`/food/${food.id}`}>{food.name}</Link>
                                     <p className="text-sm text-gray-400 line-clamp-3">{food.instructions}</p>
                                     <button className="text-sm w-full py-2 rounded-lg bg-green-800 text-gray-100 hover:bg-green-700">Add To Cart</button>
@@ -46,8 +48,7 @@ export default function Home() {
                     </div>
                 )
             })}
-            <hr />
-            <InfinitivFoods />
+   
         </div >
     )
 }

@@ -3,13 +3,14 @@ import useFoods from "../Hooks/useFoods"
 import FoodForm from "../components/templates/Dashbord/FoodForm";
 import Loading from "../components/modules/Loading";
 import ErrorAlert from "../components/modules/ErrorAlert";
-import { useDeleteFood } from "../Hooks/usePostFood";
+import DeleteButton from "../components/templates/Dashbord/DeleteButton";
+
 
 export default function () {
 
     const { data, isError, isLoading } = useFoods()
 
-    const {mutate , isLoading:isDeleteLoading} = useDeleteFood()
+    
 
     if (isLoading) return <Loading />
     if (isError) return <ErrorAlert errorMsg={"error message please try again"} />
@@ -81,11 +82,7 @@ export default function () {
                                                         <button disabled className="bg-green-500 text-white py-1 px-3 mr-4 rounded-full text-xs">
                                                             Edit
                                                         </button>
-                                                        <button disabled={isDeleteLoading}
-                                                        onClick={() => mutate(food.id)}
-                                                        className="bg-red-500 hover:bg-red-600 text-white py-1 px-3 rounded-full text-xs">
-                                                          {isDeleteLoading ? "Deleteing" : "Delete"}  
-                                                        </button> 
+                                                        <DeleteButton id={food.id} />
                                                 </td>
                                             </tr>))}
 

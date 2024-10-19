@@ -15,9 +15,7 @@ export default function FoodForm() {
     }
 
     if (isError) return <ErrorAlert errorMsg={"error message please try again"} />
-
-
-    console.log("loooooad", isLoading, "suuuuccccesss", isSuccess);
+    if (isSuccess) return <p className="bg-green-100 rounded-lg py-5 px-6 text-base text-green-700">Create successfull</p> 
     
     return (
         <form onSubmit={saveFood} className=" mx-auto p-6 bg-gray-100 rounded-lg">

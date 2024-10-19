@@ -5,21 +5,21 @@ import Loading from "../../modules/Loading";
 
 export default function InfinitivFoods() {
 
-    const { data, fetchNextPage, hasNextPage } = useInfiniteQuery(
+    const { data, fetchNextPage, hasNextPage, isFetching } = useInfiniteQuery(
         ["infiniti-foods"],
         ({ pageParam = 1 }) => {
             return fetch(`https://dummyjson.com/recipes?limit=8&skip=${pageParam}`).then(res => res.json())
         },
         {
             getNextPageParam: (data) => {
-                if(data.limit < 8) return undefined
+                if (data.limit < 8) return undefined
                 return data.skip + data.limit
             },
         })
 
     return (
-        <div className="container py-8">
-            <h3 className="text-2xl font-semibold mb-4">Other Foods</h3>
+        <div className="container py-8 mb-8">
+            <h3 className="text-3xl text-center font-bold mb-4">All Foods</h3>
             {data?.pages.map((page, index) => {
                 return (
                     <div key={index}>
@@ -29,7 +29,7 @@ export default function InfinitivFoods() {
                                 <div key={food.id}
                                     className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
                                 >
-                                    <img className="w-full" src={food.image} alt="" />
+                                    <Link to={`/food/${food.id}`}><img className="w-full max-h-64" src={food.image} alt="" /></Link>
                                     <Link to={`/food/${food.id}`}>{food.name}</Link>
                                     <p className="text-sm text-gray-400 line-clamp-3">{food.instructions}</p>
                                     <button className="text-sm w-full py-2 rounded-lg bg-green-800 text-gray-100 hover:bg-green-700">Add To Cart</button>
@@ -42,7 +42,9 @@ export default function InfinitivFoods() {
 
             <button
                 disabled={!hasNextPage}
-                className={`bg-blue-400 text-white rounded-lg py-3 px-12 mx-auto ${!hasNextPage ? "hidden" : "block"} `} onClick={() => fetchNextPage()}>Load More</button>
+                className={`bg-blue-400 text-white rounded-lg py-3 px-12 mx-auto ${!hasNextPage ? "hidden" : "block"} `} onClick={() => fetchNextPage()}>
+                {isFetching ? "Loading..." : "Load More"}
+            </button>
         </div >
     )
 }

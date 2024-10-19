@@ -23,15 +23,14 @@ export default function Foods() {
     return (
         <div className="container overflow-x-hidden">
             {isFetching ? <Loading /> : null}
-            <div className="flex flex-wrap justify-between gap-y-10">
+            <div className="flex flex-wrap justify-between gap-y-5">
                 {data?.recipes?.map(food => (
                     <div key={food.id}
                         className="w-full md:w-1/2 lg:w-1/4 p-5 space-y-2"
                     >
-                        <img className="w-full" src={food.image} alt="" />
+                        <Link to={`/food/${food.id}`}><img className="w-full max-h-64" src={food.image} alt="" /></Link>
                         <Link to={`/food/${food.id}`}>{food.name}</Link>
-                        <p className="text-sm text-gray-400 line-clamp-3">{food.instructions}</p>
-                        <button className="text-sm w-full py-2 rounded-lg bg-green-800 text-gray-100 hover:bg-green-700">Add To Cart</button>
+                        <p className="text-sm text-gray-400 line-clamp-1">{food.instructions}</p>
                     </div>
                 ))}
             </div>
